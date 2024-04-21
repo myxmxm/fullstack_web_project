@@ -44,18 +44,11 @@ pipeline {
                 }
             }
         }
-        
-        // stage('RobotFramework Status') {
-        //     steps {
-        //         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-        //             robot '.'
-        //         }
-        //     }
-        // }
 
         stage('Deploy Application To Development Environment') {
             when {
                 expression {
+                    println "Current build result: ${currentBuild.result}"
                     currentBuild.result == 'SUCCESS'
                 }
             }
