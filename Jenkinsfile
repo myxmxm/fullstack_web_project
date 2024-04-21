@@ -31,7 +31,7 @@ pipeline {
                     script {
                     sh '''
                         #!/bin/bash
-                        cd /home/alex/public_html/test/
+                        cd /home/alex/public_html/test/shell_scripts/
                         ./kill_backend_on_port.sh 8000 >> /tmp/kill_script.log 2>&1 &
                         '''
                     }
