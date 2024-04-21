@@ -15,7 +15,6 @@ pipeline {
                         cd /home/alex/public_html/test/backend/
                         sudo chmod o+w static
                         JENKINS_NODE_COOKIE=dontKillMe python3.9 -m uvicorn main:app --reload --host 0.0.0.0 --port 8000 >> /tmp/server.log 2>&1 &
-                        sleep 20
                         '''
                     }
                 }
@@ -48,6 +47,7 @@ pipeline {
         stage('Deploy Application To Development Environment') {
             when {
                 expression {
+                    def buildResult = currentBuild.result
                     println "Current build result: ${currentBuild.result}"
                     currentBuild.result == 'SUCCESS'
                 }
