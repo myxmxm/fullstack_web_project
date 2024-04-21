@@ -9,7 +9,7 @@ pipeline {
                         sh '''
                         #!/bin/bash
                         cd /home/alex/public_html/test/backend/
-                        JENKINS_NODE_COOKIE=dontKillMe python3.9 main.py >> /tmp/server.log 2>&1 &
+                        JENKINS_NODE_COOKIE=dontKillMe python3.9 -m uvicorn main:app --reload --host 0.0.0.0 --port 8000 >> /tmp/server.log 2>&1 &
                         '''
                     }
                 }
