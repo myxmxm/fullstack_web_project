@@ -80,7 +80,7 @@ pipeline {
         always {
             step([
                 $class              : 'RobotPublisher',
-                outputPath          : 'test',
+                outputPath          : 'test_results',
                 outputFileName      : "output.xml",
                 reportFileName      : 'report.html',
                 logFileName         : 'log.html',
