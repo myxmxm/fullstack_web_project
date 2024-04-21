@@ -1,14 +1,17 @@
 *** Settings ***
+Documentation     A simple test case to open a web page and check its title.
 Library           SeleniumLibrary
 
 *** Variables ***
-${BROWSER}        HeadlessChrome
-${URL}            http://example.com
-${EXPECTED TITLE}    Example Domain
+${URL}              http://10.120.32.84
+${EXPECTED_TITLE}   Complete HTML Example
 
 *** Test Cases ***
-Check Web Page Title
-    Open Browser    ${URL}    ${BROWSER}
-    ${actual_title}=    Get Title
-    Should Be Equal As Strings    ${actual_title}    ${EXPECTED TITLE}
+Open Website And Check Title
+    Open Browser    ${URL}    headlessFirefox
+    ${title}=    Get Title
+    Capture Page Screenshot      test.png
+    Should Be Equal As Strings    ${title}    ${EXPECTED_TITLE}
+
+[Teardown]
     Close Browser
