@@ -103,7 +103,8 @@ if (loggedIn) {
         try {
             const response = await fetch(url + '/menu/', fetchOptions);
             const json = await response.json();
-            showCustomAlert(json.message);
+            document.getElementById("menuForm").reset()
+            getAllMenus();
         } catch (error) {
             console.error('Error:', error);
         }
