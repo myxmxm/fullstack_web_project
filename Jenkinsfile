@@ -9,7 +9,7 @@ pipeline {
                         sh '''
                         #!/bin/bash
                         cd /home/alex/public_html/test/backend/
-                        setsid python3.9 main.py >> /tmp/server.log 2>&1 &
+                        JENKINS_NODE_COOKIE=dontKillMe python3.9 main.py >> /tmp/server.log 2>&1 &
                         sleep 10
                         '''
                     }
