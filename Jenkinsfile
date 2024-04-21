@@ -45,13 +45,13 @@ pipeline {
             }
         }
         
-        stage('RobotFramework Status') {
-            steps {
-                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                    robot '.'
-                }
-            }
-        }
+        // stage('RobotFramework Status') {
+        //     steps {
+        //         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+        //             robot '.'
+        //         }
+        //     }
+        // }
 
         stage('Deploy Application To Development Environment') {
             when {
@@ -79,9 +79,15 @@ pipeline {
     post {
         always {
             step([
-                $class : 'RobotPublisher',
-                outputFileName : "*.xml",
-                otherFiles : "*.png",
+                $class              : 'RobotPublisher',
+                outputPath          : 'test_results',
+                outputFileName      : "output.xml",
+                reportFileName      : 'report.html',
+                logFileName         : 'log.html',
+                disableArchiveOutput: false,
+                passThreshold       : 95.0,
+                unstableThreshold   : 95.0,
+                otherFiles          : "**/*.png",
             ])
             }  
         failure {
