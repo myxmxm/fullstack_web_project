@@ -77,6 +77,12 @@ pipeline {
     }
 
     post {
+        always {
+            step([
+                $class : 'RobotPublisher',
+                otherFiles : " .png, **/.png",
+            ])
+            }  
         failure {
             script {
                 sh '''
