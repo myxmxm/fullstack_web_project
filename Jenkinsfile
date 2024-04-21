@@ -48,5 +48,20 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy Application In Development Environment') {
+            when {
+                expression {
+                    currentBuild.result == 'SUCCESS'
+                }
+            }
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                    sh 'echo start  deploying application to development environment...'
+                    }
+                }
+            }
+        }
     }
 }
