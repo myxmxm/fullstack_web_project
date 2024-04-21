@@ -17,7 +17,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/backend/static/dish_1.png'); 
+    background-image: url('/frontend/images/dish_1.png'); 
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center center; 
