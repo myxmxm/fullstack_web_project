@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 *** Variables ***
 ${BROWSER}        HeadlessChrome
 ${URL}            http://example.com
-${EXPECTED TITLE}    Example Domainn
+${EXPECTED TITLE}    Example Domain
 
 *** Test Cases ***
 Check Web Page Title
