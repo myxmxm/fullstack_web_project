@@ -80,6 +80,7 @@ pipeline {
         always {
             step([
                 $class : 'RobotPublisher',
+                outputFileName : "*.xml",
                 otherFiles : ".png, **/.png",
             ])
             }  
