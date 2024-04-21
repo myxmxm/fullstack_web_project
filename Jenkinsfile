@@ -47,9 +47,8 @@ pipeline {
         stage('Deploy Application To Development Environment') {
             when {
                 expression {
-                    def buildResult = currentBuild.result
-                    println "Current build result: ${currentBuild.result}"
-                    currentBuild.result == 'SUCCESS'
+                    println "Current build result: ${currentBuild.currentResult}"
+                    currentBuild.currentResult == 'SUCCESS'
                 }
             }
             steps {
