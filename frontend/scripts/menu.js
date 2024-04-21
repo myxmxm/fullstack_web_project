@@ -103,7 +103,7 @@ if (loggedIn) {
         try {
             const response = await fetch(url + '/menu/', fetchOptions);
             const json = await response.json();
-            document.getElementById("menuForm").reset()
+            location.reload();
             getAllMenus();
         } catch (error) {
             console.error('Error:', error);
