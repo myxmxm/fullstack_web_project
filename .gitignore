@@ -195,4 +195,5 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-backend/static/*
+# backend/static/*
+.vscode/
