@@ -101,7 +101,7 @@ if (loggedIn) {
         };
 
         try {
-            const response = await fetch(url + '/menu', fetchOptions);
+            const response = await fetch(url + '/menu/', fetchOptions);
             const json = await response.json();
             showCustomAlert(json.message);
         } catch (error) {
