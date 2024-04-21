@@ -80,7 +80,7 @@ pipeline {
         always {
             step([
                 $class              : 'RobotPublisher',
-                outputPath          : 'test_results',
+                outputPath          : '/var/lib/jenkins/workspace/test/',
                 outputFileName      : "output.xml",
                 reportFileName      : 'report.html',
                 logFileName         : 'log.html',
