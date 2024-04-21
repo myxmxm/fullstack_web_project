@@ -11,8 +11,10 @@ pipeline {
         
         stage('RobotFramework Status') {
             steps {
-                robot '.'
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    robot '.'
+                }
             }
-       }
+        }
     }
 }
