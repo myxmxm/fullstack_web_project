@@ -24,6 +24,20 @@ pipeline {
                 }
             }
         }
+
+        stage('Stop Backend') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                    sh '''
+                        #!/bin/bash
+                        cd /home/alex/public_html/test/
+                        sudo ./kill_backend_on_port.sh 8000 >> /tmp/kill_script.log 2>&1 &
+                        '''
+                    }
+                }
+            }
+        }
         
         stage('RobotFramework Status') {
             steps {
