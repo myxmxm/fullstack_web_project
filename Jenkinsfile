@@ -81,7 +81,7 @@ pipeline {
             step([
                 $class : 'RobotPublisher',
                 outputFileName : "*.xml",
-                otherFiles : ".png, **/.png",
+                otherFiles : "*.png",
             ])
             }  
         failure {
