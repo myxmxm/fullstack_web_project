@@ -10,14 +10,12 @@ if (isLoggedIn) {
     nav.appendChild(reservationItem);
     nav.appendChild(logoutItem);
 
-    // Add logout functionality
     const logoutLink = document.getElementById("logout");
     logoutLink.addEventListener("click", function(event) {
         event.preventDefault();
         sessionStorage.removeItem('user');
         sessionStorage.removeItem('token');
         location.reload(); 
-        // Redirect to logout page or perform other actions as needed
     });
 
     

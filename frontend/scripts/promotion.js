@@ -7,7 +7,6 @@ addPromotionButtion.addEventListener('click', async () => {
 });
 
 const createPromotionCards = (promotions) => {
-    // clear ul
     promotionSection.innerHTML = '';
     promotions.forEach((promotion) => {
 

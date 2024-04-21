@@ -1,4 +1,4 @@
-const url = 'http://localhost:8000';
+const url = 'http://10.120.32.84:8000';
 const reservationForm = document.getElementById("reservationForm");
 
 reservationForm.addEventListener('submit', async (evt) => {
