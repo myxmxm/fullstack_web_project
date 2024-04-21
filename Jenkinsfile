@@ -10,6 +10,7 @@ pipeline {
                         #!/bin/bash
                         cd /home/alex/public_html/test/backend/
                         nohup python3.9 main.py >> /tmp/server.log 2>&1 &
+                        sleep 10
                         '''
                     }
                 }
