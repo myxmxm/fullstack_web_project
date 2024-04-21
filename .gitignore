@@ -196,6 +196,7 @@ Temporary Items
 *.icloud
 
 # backend/static/*
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
