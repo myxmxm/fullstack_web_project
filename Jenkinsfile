@@ -80,7 +80,7 @@ pipeline {
         always {
             step([
                 $class : 'RobotPublisher',
-                otherFiles : " .png, **/.png",
+                otherFiles : ".png, **/.png",
             ])
             }  
         failure {
