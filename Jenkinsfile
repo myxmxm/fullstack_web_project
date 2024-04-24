@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Start Backend') {
+        stage('Start Application In Testing Environment') {
             steps {
                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                     script {
@@ -33,7 +33,7 @@ pipeline {
             }
         }
 
-        stage('Stop Backend') {
+        stage('Stop Application In Testing Environment') {
             steps {
                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                     script {
