@@ -9,13 +9,14 @@ pipeline {
                         sh '''
                         #!/bin/bash
                         cd /home/alex/public_html/test/shell_scripts/
-                        sudo chmod +x kill_backend_on_port.sh
+                        sudo chmod +x kill_backend_on_port.sh backend_start_verification.sh
                         ./kill_backend_on_port.sh 8000
                         sleep 5
                         cd /home/alex/public_html/test/backend/
                         sudo chmod o+w static
                         JENKINS_NODE_COOKIE=dontKillMe python3.9 -m uvicorn main:app --host 0.0.0.0 --port 8000 >> /tmp/server.log 2>&1 &
                         sleep 5
+                        ./backend_start_verification.sh
                         '''
                     }
                 }
@@ -64,6 +65,7 @@ pipeline {
                         cd /var/www/html/test/backend/
                         JENKINS_NODE_COOKIE=dontKillMe python3.9 -m uvicorn main:app --host 0.0.0.0 --port 8000 >> /tmp/server.log 2>&1 &
                         sleep 5
+                        ./backend_start_verification.sh
                         '''
                     }
                 }
@@ -91,8 +93,18 @@ pipeline {
                     cd /var/www/html/test/backend/
                     JENKINS_NODE_COOKIE=dontKillMe python3.9 -m uvicorn main:app --host 0.0.0.0 --port 8000 >> /tmp/server.log 2>&1 &
                     sleep 5
+                    ./backend_start_verification.sh
                 '''
             }
         }
     }
 }
+
+
+if tail -n 2 /tmp/server.log | grep -q "Application startup complete"; then
+    echo "Application startup complete"
+    exit 0
+else
+    echo "Application startup not complete"
+    exit 1
+fi
