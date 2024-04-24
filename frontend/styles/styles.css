@@ -198,7 +198,16 @@ main {
     margin: 10px;
 }
 
-
 .button:hover {
     background-color: #7b7979; 
+}
+
+.message_container {
+    position: relative;
+    border: 1px solid #2f0707;
+    padding:20px;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-color: rgba(145, 130, 196, 0.1); 
 }

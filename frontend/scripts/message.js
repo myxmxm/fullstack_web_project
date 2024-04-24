@@ -9,15 +9,19 @@ const createMessageCards = (messages) => {
         div.classList.add('message_container');
 
         const p1 = document.createElement('p');
-        p1.innerHTML = `message date: ${message.email}`;
+        p1.innerHTML = `Custom email: ${message.email}`;
 
         const p2 = document.createElement('p');
-        p2.innerHTML = `message time: ${message.message}`;
+        p2.innerHTML = `Message: ${message.message}`;
+
+        const p3 = document.createElement('p');
+        p2.innerHTML = `Message: ${message.status}`;
 
 
         messageSection.appendChild(div);
         div.appendChild(p1);
         div.appendChild(p2);
+        div.appendChild(p3);
 
         if (isLoggedIn) {
             
