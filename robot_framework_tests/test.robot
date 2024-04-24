@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${URL}              http://10.120.32.84
-${EXPECTED_TITLE}   Food Paradise - Homes
+${EXPECTED_TITLE}   Food Paradise - Home
 
 *** Test Cases ***
 Open Website And Check Title
