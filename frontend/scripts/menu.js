@@ -103,8 +103,16 @@ if (loggedIn) {
         try {
             const response = await fetch(url + '/menu/', fetchOptions);
             const json = await response.json();
-            location.reload();
+            const messageContainer = document.getElementById('messageContainer');
+            const messageText = document.getElementById('messageText');
+            messageText.textContent = json.message;
+            messageContainer.classList.remove('hidden');
+            setTimeout(() => {
+                messageContainer.classList.add('hidden');
+            }, 2000);
+            addForm.reset();
             getAllMenus();
+            location.reload();
         } catch (error) {
             console.error('Error:', error);
         }

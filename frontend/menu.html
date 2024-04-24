@@ -22,23 +22,19 @@
     </header>
     <main>
         <div id="add_menu">
-            <h1>Add menu</h1>
+            <h1>Add A New Menu</h1>
             <div id="imagePreview"></div>
             <form id="menuForm" enctype="multipart/form-data">
                 <label for="menu_image">Menu Image:</label><br>
-                <input type="file" id="menu_image" name="file" accept="image/*" onchange="displayImage(this)"><br><br>
-                
-                <label for="menu_name">Menu Name:</label><br>
-                <textarea id="menu_name" name="name" rows="1" cols="50"></textarea><br><br>
-            
-                <label for="menu_description">Menu Description:</label><br>
-                <textarea id="menu_description" name="description" rows="4" cols="50"></textarea><br><br>
-            
-                <label for="menu_price">Menu Price:</label><br>
-                <input type="number" step="0.01" id="menu_price" name="price"><br><br>
-            
-                <input type="submit" value="Submit">
+                <input class="button" type="file" id="menu_image" name="file" accept="image/*" onchange="displayImage(this)"><br><br>
+                <textarea id="menu_name" name="name" rows="1" cols="50" placeholder="Menu name"></textarea><br><br>
+                <textarea id="menu_description" name="description" rows="4" cols="50" placeholder="Menu description"></textarea><br><br>
+                <input type="number" step="0.01" id="menu_price" name="price" placeholder="Price"><br><br>
+                <button class="button" type="submit" value="Submit">Add</button>
             </form>
+            <div id="messageContainer" class="hidden">
+                <p id="messageText"></p>
+            </div>
         </div>
         <div id="menu">
             <!-- Menu items will be dynamically added here -->

@@ -10,7 +10,7 @@ ${EXPECTED_TITLE}   Food Paradise - Homes
 Open Website And Check Title
     Open Browser    ${URL}    headlessFirefox
     ${title}=    Get Title
-    Capture Page Screenshot      test.png
+    Capture Page Screenshot      index.png
     Should Be Equal As Strings    ${title}    ${EXPECTED_TITLE}
 
 [Teardown]

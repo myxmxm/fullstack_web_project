@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from routers import router
+# from routers import router
+from routers import login, reservation, menu, promotion, message
 
 app = FastAPI()
 
@@ -25,7 +26,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(router)
+app.include_router(login.router)
+app.include_router(reservation.router)
+app.include_router(menu.router)
+app.include_router(promotion.router)
+app.include_router(message.router)
 
 if __name__ == "__main__":
     import uvicorn

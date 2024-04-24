@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Paradise - Login</title>
+    <title>Food Paradise - Reservation</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -20,30 +20,16 @@
             </nav>
         </div>
     </header>
-
     <main>
+        <div id="message_list">
 
-        <div class="form_container">
-            <h2>Admin Login</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button class="button" type="submit">Login</button>
-                <div id="messageContainer" class="hidden">
-                    <p id="messageText"></p>
-                </div>
-            </form>
         </div>
-
     </main>
     
     <footer>
         <p>&copy; 2024 Food Paradise. All rights reserved.</p>
     </footer>
-
-    <script src="scripts/login.js"></script>
     <script src="scripts/nav.js"></script>
+    <script src="scripts/message.js"></script>
 </body>
 </html>

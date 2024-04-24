@@ -73,6 +73,12 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: #e08686;
+}
+nav ul li a.selected {
+    color: #e08686;
+} 
 section {
     padding: 40px 0;
 }
@@ -139,7 +145,7 @@ main {
 
 .scrollable-section {
     margin-bottom: auto; 
-    max-height: 60vh; 
+    height: 60vh; 
     overflow-y: auto; 
     width: 100%;
     margin: 10 auto; 
@@ -178,7 +184,7 @@ main {
 
 
 .button {
-    background-color: #4CAF50; 
+    background-color: #333333; 
     border: none; 
     color: white; 
     padding: 12px 24px; 
@@ -194,5 +200,5 @@ main {
 
 
 .button:hover {
-    background-color: #011102; 
+    background-color: #7b7979; 
 }

@@ -22,13 +22,24 @@
     </header>
     <main>
         <main>
-            <section class="text_container">
+            <div class="text_container">
                 <h1>Contact Us</h1>
                 <p>Feel free to reach out to us with any questions, feedback, or inquiries. We're here to help!</p>
                 <p>Email: info@foodparadise.com</p>
                 <p>Phone: +358 4567890</p>
                 <p>Address: Maininkitie 25 , Espoo, Finland.</p>
-            </section>
+            </div>
+
+            <div class="form_container" class="form">
+                <form id="messageForm" enctype="multipart/form-data">
+                    <textarea id="message_email" name="email" rows="1" cols="50" placeholder="Your email"></textarea><br><br>
+                    <textarea id="message_content" name="message" rows="8" cols="50" placeholder="Your message"></textarea><br><br>
+                    <button class="button" type="submit" value="Submit">Send Us Message</button>
+                </form>
+                <div id="messageContainer" class="hidden">
+                    <p id="messageText"></p>
+                </div>
+            </div>
         </main>
 
     </main>

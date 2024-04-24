@@ -19,3 +19,7 @@ class Menu(BaseModel):
 class Promotion(BaseModel):
     name: str 
     description: str 
+
+class Message(BaseModel):
+    email: str
+    message: str

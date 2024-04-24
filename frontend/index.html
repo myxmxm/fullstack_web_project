@@ -32,6 +32,9 @@
 
         <div id="reservation">
                 <h2>Make a Reservation</h2>
+                <div id="messageContainer" class="hidden">
+                    <p id="messageText"></p>
+                </div>
                 <form action="#" method="post" id="reservationForm">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -41,10 +44,7 @@
                     <input type="date" id="date" name="date" required>
                     <label for="time">Time:</label>
                     <input type="time" id="time" name="time" required>
-                    <input type="submit" value="Submit">
-                    <div id="messageContainer" class="hidden">
-                        <p id="messageText"></p>
-                    </div>
+                    <button class="button" type="submit" value="Submit">Send</button>
                 </form>
         </div>
         
