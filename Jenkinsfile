@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-        stage('Run Robot Test') {
+        stage('Run Robot Framework Tests') {
             steps {
                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                     script {
