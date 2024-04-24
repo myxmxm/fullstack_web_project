@@ -15,7 +15,7 @@ const createMessageCards = (messages) => {
         p2.innerHTML = `Message: ${message.message}`;
 
         const p3 = document.createElement('p');
-        p2.innerHTML = `Message: ${message.status}`;
+        p3.innerHTML = `Message status: ${message.status}`;
 
 
         messageSection.appendChild(div);
