@@ -19,6 +19,5 @@ for pid in ${pids[@]}; do
     sudo kill -9 $pid
 done
 
-sleep 2
 echo "All processes have been killed"
 exit 0
