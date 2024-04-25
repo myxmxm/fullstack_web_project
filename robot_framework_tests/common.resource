@@ -6,8 +6,8 @@ Library           String
 Library           DateTime     
 
 *** Variables ***
-${URL}              http://10.120.32.84
-# ${URL}              file:///home/alex/public_html/test/frontend/index.html
+# ${URL}              http://10.120.32.84
+${URL}              http://localhost:8000/frontend/index.html
 ${BROWSER}          headlessFirefox
 ${TIMEOUT}          20s
 ${NAVAGATION_BAR}      //*[@id="nav"]
