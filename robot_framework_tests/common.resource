@@ -52,6 +52,7 @@ Open Web Application
     Open Browser    ${url}    ${browser}
     Set Selenium Speed    0.2
     Wait Until Page Contains Element     ${NAVAGATION_BAR}
+    Capture Page Screenshot    test.png
 
 Check Page Title
     [Documentation]    This keyword check if the page title is as expacted.
