@@ -44,6 +44,7 @@ ${RESERVATION_LIST}      //*[@id="reservation_list"]
 ${RESERVATIONS}      //*[@id="reservation_list"]/div[@class="reservation_container"]
 ${MESSAGE_LIST}      //*[@id="message_list"]
 ${MESSAGES}       //*[@id="message_list"]/div[@class="message_container"]
+${PROMOTIONS}     //div[@class="promotion_container"]
 
 *** Keywords ***
 Open Web Application
@@ -52,14 +53,13 @@ Open Web Application
     Open Browser    ${url}    ${browser}
     Set Selenium Speed    0.2
     Wait Until Page Contains Element     ${NAVAGATION_BAR}
-    Capture Page Screenshot    test.png
 
 Check Page Title
     [Documentation]    This keyword check if the page title is as expacted.
     [Arguments]    ${expacted_title}
     ${title}=    Get Title
     ${page_title_correct}    Run Keyword And Return Status     Should Be Equal As Strings    ${title}    ${expacted_title}
-    RETURN    ${page_title_correct} 
+    [Return]    ${page_title_correct} 
 
 Go To Home Page
     [Documentation]    This keyword will click Home tag
@@ -123,10 +123,12 @@ Login With Admin Credential
     Click Button   ${LOGIN_PAGE_BUTTON}
     ${text}    Get Text    ${ALERT}
     Should Be Equal As Strings    ${text}    Login successfully!
+    Sleep      2s
 
 Logout
     [Documentation]    This keyword will click logout tag
     Click Element    ${LOGOUT_TAG}
+    Sleep      2s
     Wait Until Element Is Not Visible    ${LOGOUT_TAG}
 
 

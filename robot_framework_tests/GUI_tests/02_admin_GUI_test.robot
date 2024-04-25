@@ -37,7 +37,7 @@ Admin Home Page GUI Test
     Should Be True    ${home_page_title_correct} 
     Page Should Contain Element     ${ADD_PROMOTION_BUTTON} 
     Page Should Contain Element     ${PROMOTION_LIST}
-    ${promotion_number}    Get Element Count    xpath=//div[@class="promotion_container"]
+    ${promotion_number}    Get Element Count    ${PROMOTIONS} 
     IF  ${promotion_number} > 1
         Log    There are ${promotion_number} promotions on the list.
         Page Should Contain Element     ${DELETE_PROMOTION_BUTTON} 
