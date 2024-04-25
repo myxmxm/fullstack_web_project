@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 Default Tags      Functional
 
 *** Test Cases ***
-Message Functional Test
+Promotion Functional Test
     Initialize Suite Variables
     Open Web Application
     Check Promotion Number Before Adding New Promotion

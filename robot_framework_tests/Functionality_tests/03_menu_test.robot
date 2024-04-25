@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 Default Tags      Functional
 
 *** Test Cases ***
-Message Functional Test
+Menu Functional Test
     Initialize Suite Variables
     Open Web Application
     Check Menu Number Before Adding New Menu
