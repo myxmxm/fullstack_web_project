@@ -27,7 +27,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                     script {
-                    sh 'python3.9 -m robot /home/alex/public_html/test/robot_framework_tests/test.robot'
+                    sh 'python3.9 -m robot /home/alex/public_html/test/robot_framework_tests/'
                     }
                 }
             }
