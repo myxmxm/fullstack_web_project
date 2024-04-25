@@ -30,7 +30,6 @@ async def create_menu(name: str, description: str, price: str, menu_pic: str):
 @router.post("/menu/")
 async def upload_file(authorization: str = Header(...), file: UploadFile = File(...), name: str = Form(...), description: str = Form(...), price: str = Form(...)):
     token = authorization.split(" ")[1]  
-    print("hellp")
     decode_token(token)
     os.makedirs("static/", exist_ok=True)
     try:

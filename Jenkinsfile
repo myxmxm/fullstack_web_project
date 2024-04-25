@@ -48,7 +48,7 @@ pipeline {
             }
         }
 
-        stage('Deploy Application To Development Environment') {
+        stage('Deploy Application To Production Environment') {
             when {
                 expression {
                     println "Current build result: ${currentBuild.currentResult}"
@@ -60,7 +60,7 @@ pipeline {
                     script {
                     sh '''
                         #!/bin/bash
-                        echo start deploying application to development environment...
+                        echo start deploying application to production environment...
                         cd /home/alex/public_html/
                         sudo cp -r test /var/www/html/
                         cd /var/www/html/test/backend/
