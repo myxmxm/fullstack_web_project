@@ -59,7 +59,7 @@ Check Page Title
     [Arguments]    ${expacted_title}
     ${title}=    Get Title
     ${page_title_correct}    Run Keyword And Return Status     Should Be Equal As Strings    ${title}    ${expacted_title}
-    [Return]    ${page_title_correct} 
+    RETURN    ${page_title_correct} 
 
 Go To Home Page
     [Documentation]    This keyword will click Home tag
